@@ -1,0 +1,267 @@
+    .card_search {
+        position: relative;
+        width: calc(100% - 25px);
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        padding: 12px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .card_search input {
+        width: calc(100% - 40px);
+        padding: 7px;
+        padding-left: 12px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        outline: solid 1px rgb(219, 219, 219);
+    }
+    
+    .card_search .icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgb(145, 145, 145);
+        font-size: 25px;
+    }
+    
+    .content_body {
+        width: calc(100% - 25px);
+        margin: auto;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 30px;
+    }
+    
+    .content_body .card {
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+        width: 100%;
+        padding: 10px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        overflow: auto;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .image-container {
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+        margin: auto;
+        border-radius: 5px;
+        background-color: rgb(210, 225, 240);
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content_body table {
+        table-layout: fixed;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .content_body .warp {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+    
+    .space_dot {
+        width: 10px;
+    }
+    
+    .circular-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: -3px;
+        padding-left: 3px;
+    }
+    
+    .circular-button:hover {
+        background-color: #0056b3;
+    }
+    
+    .circular-button:active {
+        background-color: #003d80;
+    }
+    
+    .circular-button i {
+        margin-right: 2px;
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        right: 0;
+        top: 0;
+        width: calc(100% - 78px);
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        background-color: #fefefe;
+        margin: auto;
+        margin-top: 20px;
+        padding: 30px;
+        border: 1px solid #888;
+        width: fit-content;
+        position: relative;
+    }
+    
+    .input_field {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        width: 300px;
+    }
+    
+    .input_field .header {
+        min-width: 40%;
+    }
+    
+    .input_field input {
+        min-width: 60%;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        outline: 1px solid rgb(185, 185, 185);
+        padding: 5px;
+    }
+    
+    .bt_modal {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .bt_modal button {
+        margin: 0 5px;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    .bt_modal button.save {
+        background-color: rgb(70, 226, 130);
+        color: white;
+        padding: 7px 15px 7px 15px;
+    }
+    
+    .bt_modal button.save:hover {
+        background-color: rgb(55, 209, 114);
+        color: white;
+    }
+    
+    .bt_modal button.cal {
+        background-color: rgb(70, 226, 130);
+        color: white;
+        font-size: 30px;
+        padding: 0px 15px 0px 15px;
+    }
+    
+    @media only screen and (max-width: 500px) {
+        .modal-content {
+            width: 95%;
+            padding: 15px;
+        }
+    }
+    
+    .card_body {
+        position: relative;
+        padding: 12px 12px 0 0;
+    }
+    
+    .st_circle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        right: 2px;
+        top: 2px;
+        z-index: 1;
+    }
+    
+    .close,
+    .close_1 {
+        padding: 7px 15px 7px 15px;
+    }
+    
+    .red {
+        background-color: red;
+    }
+    
+    .orage {
+        background-color: rgb(255, 136, 0);
+    }
+    
+    .yellow {
+        background-color: rgb(255, 208, 0);
+    }
+    
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25vh;
+    }
+    
+    .center-container h2 {
+        color: #9c9c9c;
+    }
+    
+    .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 8px solid;
+        border-color: #000 #0000;
+        animation: l1 1s infinite;
+        margin: auto;
+        margin-top: 85px;
+    }
+    
+    @keyframes l1 {
+        to {
+            transform: rotate(.5turn)
+        }
+    }
+    
+    .bg_loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }

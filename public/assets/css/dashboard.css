@@ -1,0 +1,149 @@
+.board {
+    background-color: white;
+    width: calc(100% - 25px);
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.first_header {
+    width: calc(100% - 25px);
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    white-space: wrap;
+    justify-content: space-between;
+}
+
+.first_header .search {
+    margin-right: 15px;
+    outline: solid 1px rgb(179, 179, 179);
+    padding: 7px 7px 7px 15px;
+    border-radius: 5px;
+}
+
+.first_header .search input {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.first_header .summary_header {
+    margin-left: 10px;
+}
+
+.card_board {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    width: calc(25% - 20px);
+    min-width: 200px;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.total_card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    width: calc(50% - 20px);
+    min-width: 200px;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card_board img {
+    height: 60px;
+}
+
+.main_line {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(83, 83, 83);
+    margin: 20px 0 5px 0;
+}
+
+.under_line {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(83, 83, 83);
+    margin: 5px 0 5px 0;
+}
+
+.card_board table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.card_board .over_flow {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.card_board tr {
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.card_board td {
+    padding: 10px;
+}
+
+.card_board tr:last-child {
+    border-bottom: none;
+}
+
+.summary_header {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card_board {
+        min-width: calc(50% - 25px);
+        margin-bottom: 20px;
+    }
+    .total_card {
+        min-width: calc(100% - 25px);
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .card_board {
+        min-width: calc(100% - 20px);
+    }
+    .first_header {
+        display: flex;
+        flex-direction: column;
+        white-space: wrap;
+        justify-content: space-between;
+    }
+    .first_header .search {
+        margin-right: 12px;
+        margin-left: 12px;
+        margin-top: 10px;
+        outline: solid 1px rgb(179, 179, 179);
+        padding: 7px 7px 7px 15px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+    }
+    .first_header .search label {
+        display: none;
+    }
+    .first_header .search input {
+        width: calc(100%);
+    }
+}
