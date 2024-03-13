@@ -207,8 +207,42 @@
         <div class="total_card">
             <h2>Summary</h2>
             <hr class="main_line">
-            <h3>Total momey : 1590</h3>
-
+            <div class="over_flow">
+                <table>
+                    <tr>
+                        <td>ไก่ป๊อปคลุกผง(M)</td>
+                        <td>GRAB</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>ไก่ป๊อปคลุกผง(M)</td>
+                        <td>LINEMAN</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>ไก่ป๊อปคลุกผง(M)</td>
+                        <td>เงินสด</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>ไก่ป๊อปคลุกผง(M)</td>
+                        <td>GRAB</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>ไก่ป๊อปคลุกผง(M)</td>
+                        <td>LINEMAN</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>ไก่ป๊อปคลุกผง(M)</td>
+                        <td>เงินสด</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+            <hr class="under_line">
+            <h2 class="total_price">Total Price : 1000</h2>
         </div>
     </div>
 

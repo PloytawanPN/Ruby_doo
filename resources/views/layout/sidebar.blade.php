@@ -10,11 +10,11 @@
 
         @if (Session::has('role') && Session::get('role') == '2')
             <li>
-                <a href="/checkin">
+                <a href="/orderlist">
                     <i class='bx bx-check-square'></i>
-                    <span class="links_name">Checkin</span>
+                    <span class="links_name">Order List</span>
                 </a>
-                <span class="tooltip">Checkin</span>
+                <span class="tooltip">Order List</span>
             </li>
         @endif
 
@@ -46,6 +46,13 @@
                     <span class="links_name">Expenses</span>
                 </a>
                 <span class="tooltip">Expenses</span>
+            </li>
+            <li>
+                <a href="/approve">
+                    <i class='bx bx-check-shield'></i>
+                    <span class="links_name">Approve</span>
+                </a>
+                <span class="tooltip">Approve</span>
             </li>
         @endif
     </ul>

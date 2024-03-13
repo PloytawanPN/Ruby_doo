@@ -109,6 +109,33 @@
     font-size: 30px;
 }
 
+.total_card table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.total_card .over_flow {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.total_card tr {
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.total_card td {
+    padding: 10px;
+}
+
+.total_card tr:last-child {
+    border-bottom: none;
+}
+
+.total_price {
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 1200px) {
     .card_board {
         min-width: calc(50% - 25px);
