@@ -1,13 +1,13 @@
 <div>
     <button id="openModalBtn" class="circular-button" wire:click='cancel'><i class='bx bx-plus'></i></button>
 
-    <div id="modal_1" class="modal" wire:ignore>
+    <div id="modal_1" class="modal" wire:ignore.self>
         <div class="modal-content">
             <div class="bg_loader" wire:loading wire:target='setdata'>
                 <div class="loader"></div>
             </div>
             <div class="bg_loader" wire:loading wire:target='update_data'>
-                <div class="loader"></div>
+                <div class="loader_update"></div>
             </div>
             <div class="input_field">
                 <div class="header">
@@ -27,10 +27,19 @@
                 </div>
                 <input type="number" wire:model="config_quantity">
             </div>
-            {{-- <input type="number" class="cal_product"/> --}}
+            <div class="input_field">
+                <div class="header">
+                    <label>Drawdown</label>
+                </div>
+                <div class="checkbox-wrapper-51"><input type="checkbox" id="cbx-51"
+                        wire:model.live='drawdown' /><label for="cbx-51" class="toggle"><span><svg width="10px"
+                                height="10px" viewBox="0 0 10 10">
+                                <path
+                                    d="M5,1 L5,1 C2.790861,1 1,2.790861 1,5 L1,5 C1,7.209139 2.790861,9 5,9 L5,9 C7.209139,9 9,7.209139 9,5 L9,5 C9,2.790861 7.209139,1 5,1 L5,9 L5,1 Z">
+                                </path>
+                            </svg></span></label></div>
+            </div>
             <div class="bt_modal">
-                {{-- <button wire:click='save' class="cal">-</button>
-                <button wire:click='save' class="cal">+</button> --}}
                 <button class="save" wire:click='update_data'>Update</button>
                 <button class="close_1">Cancel</button>
             </div>
@@ -38,7 +47,7 @@
     </div>
 
 
-    <div id="modal" class="modal" wire:ignore>
+    <div id="modal" class="modal" wire:ignore.self>
         <div class="modal-content">
             <div class="bg_loader" wire:loading wire:target='save'>
                 <div class="loader"></div>
@@ -50,7 +59,7 @@
                 <div class="header">
                     <label>Image</label>
                 </div>
-                <input type="file" wire:model="photo">
+                <input type="file" wire:model.live="photo">
                 {{-- @error('photo')
                     <span class="error">{{ $message }}</span>
                 @enderror --}}

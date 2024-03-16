@@ -5,6 +5,9 @@ use App\Http\Controllers\ImageController;
 
 
 Route::group(['middleware' => 'custom'], function () {
+    Route::get('/', function () {
+        return view('layout.signin');
+    });
     Route::get('/signin', function () {
         return view('layout.signin');
     });
@@ -32,5 +35,15 @@ Route::group(['middleware' => 'custom'], function () {
     Route::get('/orderlist', function () {
         return view('content.orderlist');
     });
+    Route::get('/pickstock', function () {
+        return view('content.pickstock');
+    });
+    Route::get('/approve_stock', function () {
+        return view('content.approve_stock');
+    });
 });
 Route::get('images/{filename}', [ImageController::class, 'getImage'])->name('image.get');
+Route::get('/clear-alert', function () {
+    session()->forget('alert');
+    return response()->json(['message' => 'Alert cleared successfully']);
+});

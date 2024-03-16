@@ -17,23 +17,39 @@ class MyCustomMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+
         if (!Session::has('username')) {
+            if ($request->path() != 'signin' && $request->path() != 'signup') {
+                return Redirect::to('signin');
+            }
+        } else {
+
+            if ($request->path() == 'signin' || $request->path() == 'signup') {
+                if (Session::get('role') == 2) {
+                    return Redirect::to('orderlist');
+                } else {
+                    return Redirect::to('dashboard');
+                }
+            }
+
+            if ($request->path() != 'orderlist' && $request->path() != 'pickstock') {
+                if (Session::get('role') == 2) {
+                    return Redirect::to('orderlist');
+                }
+            }
+        }
+
+        /* if (!Session::has('username')) {
             if ($request->path() !== 'signin' && $request->path() !== 'signup') {
                 return Redirect::to('signin');
             }
-        } elseif (Session::get('role') == 0) {
-            if ($request->path() !== 'home') {
-                return Redirect::to('home');
+        } else {
+            if (Session::get('role') == 0) {
+                if ($request->path() !== 'orderlist' || $request->path() !== 'pickstock') {
+                    return Redirect::to('orderlist');
+                }
             }
-        } elseif (Session::get('role') == 1) {
-            if ($request->path() === 'home') {
-                return Redirect::to('dashboard');
-            }
-        }else{
-            if ($request->path() != 'orderlist') {
-                return Redirect::to('orderlist');
-            }
-        }
+        } */
         return $next($request);
     }
 }

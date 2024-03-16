@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class Orderlist extends Component
 {
-    public $product = false, $size = false, $type = false, $count = 0,$group, $channel = '', $order_list;
+    public $product = false, $size = false, $type = false, $count = 0, $group, $channel = '', $order_list;
 
     public $order = ['product' => '', 'size' => '', 'type' => '', 'count' => ''];
     public $row_order = [];
@@ -80,6 +80,47 @@ class Orderlist extends Component
         $this->resetValidation();
         $maxGroup = DB::table('order_list')->max('group_');
         foreach ($this->row_order as $row) {
+            $count=0;
+            if ($row['product'] == 1) {
+                if ($row['size'] == 'S') {
+                    $count+=(3*$row['count']);
+                } elseif ($row['size'] == 'M') {
+                    $count+=(5*$row['count']);
+                } elseif ($row['size'] == 'L') {
+                    $count+=(7*$row['count']);
+                } elseif ($row['size'] == 'XL') {
+                    $count+=(10*$row['count']);
+                }
+                $item=DB::table('stock')->where('product','ปีกไก่บน')->first();
+                DB::table('stock')->where('product','ปีกไก่บน')->update([
+                    'amount'=>$item->amount-$count
+                ]);
+            } elseif ($row['product'] == 2) {
+                if ($row['size'] == 'S') {
+                    $count+=(100*$row['count']);
+                } elseif ($row['size'] == 'M') {
+                    $count+=(200*$row['count']);
+                }
+                $item=DB::table('stock')->where('product','ไก่ป๊อป')->first();
+                DB::table('stock')->where('product','ไก่ป๊อป')->update([
+                    'amount'=>$item->amount-$count
+                ]);
+            } elseif ($row['product'] == 3) {
+                $count+=1*$row['count'];
+                $item=DB::table('stock')->where('product','โค้ก')->first();
+                DB::table('stock')->where('product','โค้ก')->update([
+                    'amount'=>$item->amount-$count
+                ]);
+            } elseif ($row['product'] == 4) {
+                $count+=1*$row['count'];
+                $item=DB::table('stock')->where('product','ชเวปส์')->first();
+                DB::table('stock')->where('product','ชเวปส์')->update([
+                    'amount'=>$item->amount-$count
+                ]);
+            }
+        }
+
+        foreach ($this->row_order as $row) {
             DB::table('order_list')->insert([
                 'product' => $row['product'] == 1 ? 'ไก่ทอด' : ($row['product'] == 2 ? 'ไก่ป๊อป' : ($row['product'] == 3 ? 'โค้ก' : 'ชเวปส์')),
                 'size' => $row['size'],
@@ -97,7 +138,7 @@ class Orderlist extends Component
     {
         $currentDate = Carbon::today();
         $this->group = DB::table('order_list')
-            ->select('group_','channel')
+            ->select('group_', 'channel')
             ->whereDate('create_at', $currentDate)
             ->distinct()
             ->get();

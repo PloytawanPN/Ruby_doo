@@ -14,6 +14,8 @@ class Stock extends Component
     public $photo, $product, $min, $product_list, $search;
     public $config_product, $config_min, $config_quantity,$id;
 
+    public $drawdown;
+
     public function setdata($id)
     {
         $data = DB::table('stock')->where('id', $id)->first();
@@ -21,6 +23,7 @@ class Stock extends Component
         $this->config_min = $data->min;
         $this->config_quantity = 0;
         $this->id=$id;
+        $this->drawdown=$data->status==0?false:true;
     }
 
     public function update_data()
@@ -44,7 +47,8 @@ class Stock extends Component
             'min' => $this->config_min,
             'amount' => ($data->amount + ($this->config_quantity))<0 ? 0 : ($data->amount + ($this->config_quantity)),
             'total' => ($this->config_quantity >= 0) ? ($this->config_quantity+$data->total):($data->total),
-            'update_at' => Carbon::now()
+            'update_at' => Carbon::now(),
+            'status' => $this->drawdown==false?0:1,
         ]);
 
         return redirect('/stock');
@@ -99,3 +103,5 @@ class Stock extends Component
         return view('livewire.stock');
     }
 }
+
+

@@ -1,110 +1,111 @@
-            .approve_card {
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                width: calc(100% - 25px);
-                padding: 10px;
-                margin: auto;
-                height: 60px;
-                margin-top: 20px;
-                border-radius: 12px;
-                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-            }
-            
-            .flex {
-                position: absolute;
-                display: flex;
-                flex-direction: row;
-            }
-            
-            .circle {
-                position: absolute;
-                height: 40px;
-                width: 40px;
-                border-radius: 50%;
-            }
-            
-            .description {
-                position: absolute;
-                top: 10px;
-                left: 50px;
-                width: 100vw;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            
-            .approve {
-                border: none;
-                outline: none;
-                padding: 0 10px 0 10px;
-                border-radius: 5px;
-                margin-right: 10px;
-                position: absolute;
-                height: 40px;
-                cursor: pointer;
-                right: 10px;
-            }
-            
-            .reject {
-                border: none;
-                outline: none;
-                padding: 0 10px 0 10px;
-                border-radius: 5px;
-                position: absolute;
-                height: 40px;
-                right: 80px;
-                cursor: pointer;
-            }
-            
-            .header {
-                margin: 20px 0 0 20px;
-            }
-            
-            .row {
-                display: flex;
-                flex-direction: row;
-                white-space: nowrap;
-                justify-content: space-between;
-                margin-right: 20px;
-            }
-            
-            .row input {
-                border: none;
-                border-radius: 5px;
-                padding: 10px;
-                outline: 1px solid rgb(155, 155, 155);
-                height: 40px;
-                width: 250px;
-                margin-top: 30px;
-            }
-            
-            .not_found {
-                justify-content: center;
-                text-align: center;
-                padding-top: 25vh;
-                color: rgb(212, 212, 212);
-            }
-            
-            @media only screen and (max-width: 700px) {
-                .description {
-                    width: 25vw
-                }
-                .row {
-                    display: flex;
-                    flex-direction: column;
-                    white-space: nowrap;
-                    justify-content: space-between;
-                    margin-right: 0;
-                }
-                .row input {
-                    border: none;
-                    border-radius: 5px;
-                    padding: 10px;
-                    outline: 1px solid rgb(155, 155, 155);
-                    height: 40px;
-                    width: calc(100% - 25px);
-                    margin: auto;
-                    margin-top: 10px;
-                }
-            }
+.approve_card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 25px);
+    padding: 10px;
+    margin: auto;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    overflow-x: hidden;
+}
+
+.flex {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.circle {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.description {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 100vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.approve {
+    border: none;
+    outline: none;
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    position: absolute;
+    height: 40px;
+    cursor: pointer;
+    right: 10px;
+}
+
+.reject {
+    border: none;
+    outline: none;
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+    position: absolute;
+    height: 40px;
+    right: 80px;
+    cursor: pointer;
+}
+
+.header {
+    margin: 20px 0 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.row input {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    outline: 1px solid rgb(155, 155, 155);
+    height: 40px;
+    width: 250px;
+    margin-top: 30px;
+}
+
+.not_found {
+    justify-content: center;
+    text-align: center;
+    padding-top: 25vh;
+    color: rgb(212, 212, 212);
+}
+
+@media only screen and (max-width: 700px) {
+    .description {
+        width: 25vw
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        justify-content: space-between;
+        margin-right: 0;
+    }
+    .row input {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        outline: 1px solid rgb(155, 155, 155);
+        height: 40px;
+        width: calc(100% - 25px);
+        margin: auto;
+        margin-top: 10px;
+    }
+}

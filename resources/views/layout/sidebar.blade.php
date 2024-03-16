@@ -12,9 +12,16 @@
             <li>
                 <a href="/orderlist">
                     <i class='bx bx-check-square'></i>
-                    <span class="links_name">Order List</span>
+                    <span class="links_name">ออเดอร์</span>
                 </a>
-                <span class="tooltip">Order List</span>
+                <span class="tooltip">ออเดอร์</span>
+            </li>
+            <li>
+                <a href="/pickstock">
+                    <i class='bx bx-package'></i>
+                    <span class="links_name">เบิกของ</span>
+                </a>
+                <span class="tooltip">เบิกของ</span>
             </li>
         @endif
 
@@ -25,6 +32,27 @@
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="/orderlist">
+                    <i class='bx bx-check-square'></i>
+                    <span class="links_name">Order List</span>
+                </a>
+                <span class="tooltip">Order List</span>
+            </li>
+            <li>
+                <a href="/pickstock">
+                    <i class='bx bx-transfer-alt'></i>
+                    <span class="links_name">Pick Up</span>
+                </a>
+                <span class="tooltip">Pick Up</span>
+            </li>
+            <li>
+                <a href="/approve_stock">
+                    <i class='bx bx-archive'></i>
+                    <span class="links_name">Approve</span>
+                </a>
+                <span class="tooltip">Approve</span>
             </li>
             <li>
                 <a href="/stock">
@@ -50,9 +78,9 @@
             <li>
                 <a href="/approve">
                     <i class='bx bx-check-shield'></i>
-                    <span class="links_name">Approve</span>
+                    <span class="links_name">Account</span>
                 </a>
-                <span class="tooltip">Approve</span>
+                <span class="tooltip">Account</span>
             </li>
         @endif
     </ul>
